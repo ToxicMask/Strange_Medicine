@@ -1,2 +1,2 @@
-# Strange_Medicine
+# Strange Medicine
 Comedy - Horror Puzzle Game.
