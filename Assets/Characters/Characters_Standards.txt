@@ -1,0 +1,6 @@
+
+Standard Block Size: 32x32
+
+Standard Char Size: 32x64
+
+Screen Size: 160x120
