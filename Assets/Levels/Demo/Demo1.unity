@@ -275,7 +275,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 156b0a0c7f4102f4389b10b0e8eb6a7c, type: 3}
+  m_Sprite: {fileID: -9004711713399555434, guid: 384dfc7ee9a234a4caf8ac48b68c868b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a600c4704cae504096e11678506c8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_speed: 64
+  walk_speed: 128
 --- !u!50 &1013799870
 Rigidbody2D:
   serializedVersion: 4
@@ -376,7 +377,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013799864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 17c85333857a7e740b92939814baa68f, type: 2}
   m_CullingMode: 0
