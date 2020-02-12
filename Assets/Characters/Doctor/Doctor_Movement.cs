@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doctor_Player : MonoBehaviour
+public class Doctor_Movement : MonoBehaviour
 {
     //Componets
-    private Rigidbody2D kinematic2D;
+    public Rigidbody2D kinematic2D;
 
     //Animation
-    private Animator anim_control;
+    public Animator anim_control;
     enum WALK_DIR : int { IDLE, UP, DOWN, LEFT, RIGHT }
 
     //Movement
@@ -16,17 +16,15 @@ public class Doctor_Player : MonoBehaviour
     const float pixel_aspect = 32f;
     public float walk_speed = 1f;
 
-    //Sight Raycast
-    Vector2 vector_raycast = Vector2.down;
-    
-    //private Vector3 linear_velocity = Vector3.zero;
+    // Raycast Sight
+    public Vector2 sight_vector = Vector2.down;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //Set Componets
-        kinematic2D = GetComponent <Rigidbody2D>();
+        kinematic2D = GetComponent<Rigidbody2D>();
 
         anim_control = GetComponent<Animator>();
 
@@ -39,6 +37,9 @@ public class Doctor_Player : MonoBehaviour
         // Get movement direction
         Vector2 input_dir = Direction_Movement_Input();
 
+        // Update sight vector
+        if (input_dir != Vector2.zero)
+            { sight_vector = input_dir; }
 
         // Pixel Perfect Movement
         Pixel_Perfect_Movement(input_dir, pixel_aspect);
@@ -82,11 +83,10 @@ public class Doctor_Player : MonoBehaviour
         { accel_dir.x += 1; new_anim = WALK_DIR.RIGHT; }
 
         //Set new animation, Freze animation if Char is idle <TEMP>
-        anim_control.SetInteger("Dir_ID", (int)new_anim);
-
         if (new_anim != WALK_DIR.IDLE)
         {
-             anim_control.speed = 1;
+            anim_control.SetInteger("Dir_ID", (int)new_anim);
+            anim_control.speed = 1;
         }
         else
         {
@@ -106,4 +106,6 @@ public class Doctor_Player : MonoBehaviour
 
         return new_round_vector / pixelperUnit;
     }
+
+
 }
