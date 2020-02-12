@@ -5,15 +5,21 @@ using UnityEngine;
 public class Doctor_Action : MonoBehaviour
 {
 
+    // Components
     public Doctor_Movement movement_script;
 
     public Transform action_pivot;
 
     public LineRenderer red_line;
 
-    public float action_offset = 1;
+    // Action variables
+    public float action_offset = 1f;
 
-    public bool edit_mode = true;
+    public Item item_slot;
+
+
+    // Edit mode
+    public bool edit_mode = false;
 
     
 
@@ -25,39 +31,73 @@ public class Doctor_Action : MonoBehaviour
         red_line= GetComponentInChildren<LineRenderer>(); 
     }
 
+
+
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if ( Input.GetButtonDown("Action_Right"))
+
+        // Primaty action: Use Item Action
+        if ( Input.GetButtonDown("Action_Primary"))
         {
-            Action_Right_Hand();
+            Use_Item();
         }
-        else if (Input.GetButtonDown("Action_Left"))
+
+        // Secundary action: Pick Up
+        else if (Input.GetButtonDown("Action_Secundary"))
         {
-            Action_Left_Hand();
+            Pick_Up_Item();
         }
     }
 
 
-    void Action_Right_Hand()
+
+    // Use equiped item
+    void Use_Item()
     {
+        if (item_slot.item_id != -1)
+        {
+            print("Item: " + item_slot.name);
+        }
+        else
+        {
+            print("Empty Hand");
+        }
+    }
+
+
+
+    // Pick new item
+    void Pick_Up_Item()
+    {
+        // Project raycast for action
         RaycastHit2D new_info = Action_Raycast();
 
-        print("RIGHT HAND:" + new_info.point + " Target:" + new_info.collider);
-        Report(new_info);
+        // Match new info to target type
+        if (new_info)
+        {
+            // Item box
+            ItemBox current_itembox = new_info.transform.GetComponent<ItemBox>();
+
+            if (current_itembox != null)
+            {
+                Item new_tool = current_itembox.Open_Box();
+
+                item_slot = new_tool;
+                print(item_slot.name);
+                return;
+            }
+        }
     }
 
 
-
-    void Action_Left_Hand()
-    {
-        print("LEFT HAND");
-    }
 
     RaycastHit2D Action_Raycast()
     {
         return Physics2D.Raycast(action_pivot.position, movement_script.sight_vector, action_offset);
     }
+
+
 
     void Report(RaycastHit2D new_info)
     {
