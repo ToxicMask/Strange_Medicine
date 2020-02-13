@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ItemBox
+  - Patient
   layers:
   - Default
   - TransparentFX

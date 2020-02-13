@@ -15,7 +15,8 @@ public class Doctor_Action : MonoBehaviour
     // Action variables
     public float action_offset = 1f;
 
-    public Item item_slot;
+    //Empty item
+    public Item item_slot = new Item(-1);
 
 
     // Edit mode
@@ -55,14 +56,7 @@ public class Doctor_Action : MonoBehaviour
     // Use equiped item
     void Use_Item()
     {
-        if (item_slot.item_id != -1)
-        {
-            print("Item: " + item_slot.name);
-        }
-        else
-        {
-            print("Empty Hand");
-        }
+        print("Item: " + item_slot.name);
     }
 
 

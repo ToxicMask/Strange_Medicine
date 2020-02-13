@@ -11,10 +11,15 @@ public class Item
     {
         NEEDLE,
         SAW,
-        COUNT
+        HAMMER,
+        BRAIN,
+        HEART,
+        LEG,
+        COUNT,
+        EMPTY = -1,
     } 
 
-    public string[] string_names = new string[] { "Needle", "Saw" };
+    public string[] string_names = new string[] { "Needle", "Saw", "Hammer", "Brain", "Heart", "Leg" };
 
     public int item_id = -1;
     public string name = "";
@@ -24,6 +29,9 @@ public class Item
         
         this.item_id = id;
 
-        this.name = string_names[id];
+        if (id != -1)
+        { this.name = string_names[id]; }
+        else
+        { this.name = "Empty Hand"; }
     }
 }
