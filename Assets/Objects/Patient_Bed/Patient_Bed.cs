@@ -15,18 +15,40 @@ public class Patient_Bed : MonoBehaviour
     // Current Step for the patient treatment
 
     public int current_step = 0;
-    
+
+    // Bed treatment template ids
+
+    public int template_id = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        required_steps = New_Template();
+        required_steps = New_Template(template_id);
     }
 
-    List<ITEM_TYPE> New_Template()
+    List<ITEM_TYPE> New_Template(int template_id)
     {
 
-        List<ITEM_TYPE> new_temp = new List<ITEM_TYPE>() {ITEM_TYPE.HEART, ITEM_TYPE.NEEDLE };
+        List<ITEM_TYPE> new_temp = new List<ITEM_TYPE>();
+
+        switch (template_id)
+        {
+            // Only Tools
+
+            case 0:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.SCISSOR };
+            break;
+            
+            case 1:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.SAW };
+            break;
+            
+            case 2:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.HAMMER};
+            break;
+        }
+
 
         return new_temp;
     }

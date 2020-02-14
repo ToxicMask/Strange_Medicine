@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ItemBox
   - Patient
+  - Screen_Config
+  - Icon_Display
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Icon_Display
+    uniqueID: 2025496907
     locked: 0

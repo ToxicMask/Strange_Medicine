@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum ITEM_TYPE
 {
-    NEEDLE,
+    SCISSOR,
     SAW,
     HAMMER,
     BRAIN,
@@ -20,7 +20,7 @@ public enum ITEM_TYPE
 public class Item 
 {
 
-    public string[] string_names = new string[] { "Needle", "Saw", "Hammer", "Brain", "Heart", "Leg" };
+    public string[] string_names = new string[] { "Scissor", "Saw", "Hammer", "Brain", "Heart", "Leg" };
 
     public int item_id = -1;
     public string name = "";
