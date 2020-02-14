@@ -56,7 +56,22 @@ public class Doctor_Action : MonoBehaviour
     // Use equiped item
     void Use_Item()
     {
-        print("Item: " + item_slot.name);
+        // Project raycast for action
+        RaycastHit2D new_info = Action_Raycast();
+
+        // Match new info to target type
+        if (new_info)
+        {
+            Patient_Bed current_patient = new_info.transform.GetComponent<Patient_Bed>();
+
+            if (current_patient != null)
+            {
+                current_patient._Check_Treatment(item_slot.item_id);
+                //print("Item: Used");
+                return;
+            }
+        }
+        //print("Item: " + item_slot.name);
     }
 
 
@@ -78,7 +93,7 @@ public class Doctor_Action : MonoBehaviour
                 Item new_tool = current_itembox.Open_Box();
 
                 item_slot = new_tool;
-                print(item_slot.name);
+                //print(item_slot.name);
                 return;
             }
         }

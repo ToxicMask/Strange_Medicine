@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum ITEM_TYPE
+{
+    NEEDLE,
+    SAW,
+    HAMMER,
+    BRAIN,
+    HEART,
+    LEG,
+    COUNT,
+    EMPTY = -1,
+}
+
+
 //[System.Serializable]
 public class Item 
 {
-
-    public enum ITEM_TYPE
-    {
-        NEEDLE,
-        SAW,
-        HAMMER,
-        BRAIN,
-        HEART,
-        LEG,
-        COUNT,
-        EMPTY = -1,
-    } 
 
     public string[] string_names = new string[] { "Needle", "Saw", "Hammer", "Brain", "Heart", "Leg" };
 
