@@ -8,6 +8,7 @@ TagManager:
   - Patient
   - Screen_Config
   - Icon_Display
+  - Scenary
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 361937213
+    locked: 0
+  - name: Scenary
+    uniqueID: 911037841
+    locked: 0
+  - name: Char&Object
+    uniqueID: 2372501949
     locked: 0
   - name: Icon_Display
     uniqueID: 2025496907

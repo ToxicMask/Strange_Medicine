@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 2acd8f0182b03264b88ff146a5bc787a
+guid: a96ef60379886ac41bba4127fa57d16b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5305975159808271578
-    second: ItemBox_Sheet_Open
+      213: -979615535948927956
+    second: Basic_Wall_Placeholder_0
   - first:
-      213: -1786008978582843815
-    second: ItemBox_Sheet_Closed
+      213: -2458979534962849460
+    second: Basic_Wall_Placeholder_1
+  - first:
+      213: -7509926443617677318
+    second: Basic_Wall_Placeholder_2
+  - first:
+      213: -532412634584536876
+    second: Basic_Wall_Placeholder_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,11 +55,11 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 9
-  spritePivot: {x: 0.25, y: 0.25}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 0, y: 0, z: 32, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -116,43 +122,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ItemBox_Sheet_Open
+      name: Basic_Wall_Placeholder_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9528117c65bf71448dd7e18c0dd94f3
+      internalID: -979615535948927956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Wall_Placeholder_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9548be2791d061b4c8495c29aea712e2
+      internalID: -2458979534962849460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Wall_Placeholder_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
-      spriteID: 79cb7db50d74ced43a650ff3ef246e64
-      internalID: 5305975159808271578
+      spriteID: 6bc897973defaa641880bae48b78d2e6
+      internalID: -7509926443617677318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ItemBox_Sheet_Closed
+      name: Basic_Wall_Placeholder_3
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
-      spriteID: 4946c32f559d8d344a3d8b6ed129234f
-      internalID: -1786008978582843815
+      spriteID: 3bf31ff419c3b2c418a536f088c0a1be
+      internalID: -532412634584536876
       vertices: []
       indices: 
       edges: []
