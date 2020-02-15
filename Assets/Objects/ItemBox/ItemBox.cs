@@ -11,9 +11,6 @@ public class ItemBox : MonoBehaviour
 
     public Item stored_item;
 
-    //To be erased
-    public int item_id = -1;
-
     //To be used
     public ITEM_TYPE item_enum = ITEM_TYPE.EMPTY;
 
@@ -25,10 +22,10 @@ public class ItemBox : MonoBehaviour
         item_display = this.gameObject.transform.Find("Icon_Display").gameObject;
         item_icon = item_display.transform.Find("Icon").GetComponent<Icon_Item>();
 
-        if (item_id > -1)
+        if (item_enum != ITEM_TYPE.EMPTY)
         {
-            stored_item = new Item(item_id);
-            item_icon.Set_New_Icon(item_id);
+            stored_item = new Item(item_enum);
+            item_icon.Set_New_Icon(item_enum);
         }
         
     }

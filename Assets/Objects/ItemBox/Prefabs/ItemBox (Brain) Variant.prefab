@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8457750931557615437
+--- !u!1001 &624747025329840814
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,22 +10,17 @@ PrefabInstance:
     - target: {fileID: 2936968458031868462, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
       propertyPath: m_Name
-      value: ItemBox (Scissor) Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936968458031868462, guid: bcf91cec136683945803eb98bafd73bc,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
+      value: ItemBox (Brain)
       objectReference: {fileID: 0}
     - target: {fileID: 6870823810873183081, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6870823810873183081, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6870823810873183081, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
@@ -74,13 +69,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4567649814508975816, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
-      propertyPath: item_id
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4567649814508975816, guid: bcf91cec136683945803eb98bafd73bc,
-        type: 3}
       propertyPath: item_enum
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf91cec136683945803eb98bafd73bc, type: 3}

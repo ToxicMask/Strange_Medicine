@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2936968458031868462, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
       propertyPath: m_Name
-      value: ItemBox (Saw)
+      value: ItemBox (Saw) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2936968458031868462, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
@@ -75,6 +75,11 @@ PrefabInstance:
     - target: {fileID: 4567649814508975816, guid: bcf91cec136683945803eb98bafd73bc,
         type: 3}
       propertyPath: item_id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567649814508975816, guid: bcf91cec136683945803eb98bafd73bc,
+        type: 3}
+      propertyPath: item_enum
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

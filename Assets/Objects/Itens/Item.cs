@@ -22,16 +22,16 @@ public class Item
 
     public string[] string_names = new string[] { "Scissor", "Saw", "Hammer", "Brain", "Heart", "Leg" };
 
-    public int item_id = -1;
+    public ITEM_TYPE item_id = ITEM_TYPE.EMPTY;
     public string name = "";
 
-    public Item(int id)
+    public Item(ITEM_TYPE id)
     {
         
         this.item_id = id;
 
-        if (id != -1)
-        { this.name = string_names[id]; }
+        if (id != ITEM_TYPE.EMPTY)
+        { this.name = string_names[(int)id]; }
         else
         { this.name = "Empty Hand"; }
     }

@@ -8,7 +8,7 @@ public class Icon_Item : MonoBehaviour
 
     public Sprite[] icon_item;
 
-    public int icon_id = -1;
+    public ITEM_TYPE icon_id = ITEM_TYPE.EMPTY;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +16,13 @@ public class Icon_Item : MonoBehaviour
         sprite_comp = GetComponent<SpriteRenderer>();
 
     }
-    public void Set_New_Icon(int new_icon)
+    public void Set_New_Icon(ITEM_TYPE new_icon)
     {
         icon_id = new_icon;
 
-        if (icon_id != -1)
+        if (icon_id != ITEM_TYPE.EMPTY)
         {
-            sprite_comp.sprite = icon_item[icon_id];
+            sprite_comp.sprite = icon_item[(int)icon_id];
         }
     }
 }

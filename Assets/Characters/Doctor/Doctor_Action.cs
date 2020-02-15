@@ -18,7 +18,7 @@ public class Doctor_Action : MonoBehaviour
     public float action_offset = 1f;
 
     //Empty item
-    public Item item_slot = new Item(-1);
+    public Item item_slot = new Item(ITEM_TYPE.EMPTY);
 
 
     // Edit mode
@@ -96,7 +96,7 @@ public class Doctor_Action : MonoBehaviour
 
                 item_slot = new_tool;
                 //print(item_slot.name);
-                player_ui.Update_Inventory_Item(ITEM_TYPE.SAW);
+                player_ui.Update_Inventory_Item(item_slot.item_id);
                 return;
             }
         }

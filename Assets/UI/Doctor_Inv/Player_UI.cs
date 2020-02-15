@@ -32,7 +32,7 @@ public class Player_UI : MonoBehaviour
         {
             //print("EMPTY");
             item_sprite_render.color = new Color(0f, 0f, 0f, 0f);
-            item_name_display.text = "EMPTY HAND";
+            item_name_display.text = "Empty Hand";
             return;
         }
 

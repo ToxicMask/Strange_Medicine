@@ -24,6 +24,7 @@ public class Patient_Bed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current_step = 0;
         required_steps = New_Template(template_id);
     }
 
@@ -47,22 +48,40 @@ public class Patient_Bed : MonoBehaviour
             case 2:
             new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.HAMMER};
             break;
+
+            case 3:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.SAW, ITEM_TYPE.SCISSOR};
+            break;
+
+            // Organ + Tools
+
+            case 10:
+            new_temp = new List<ITEM_TYPE>() {  ITEM_TYPE.SAW, ITEM_TYPE.LEG};
+            break;
+
+            case 11:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.SCISSOR, ITEM_TYPE.HEART};
+            break;
+
+            case 12:
+            new_temp = new List<ITEM_TYPE>() { ITEM_TYPE.HAMMER, ITEM_TYPE.BRAIN};
+            break;
         }
 
 
         return new_temp;
     }
 
-    public void _Check_Treatment(int item_used)
+    public void _Check_Treatment(ITEM_TYPE item_used)
     {
-        if (item_used == (int)required_steps[current_step])
+        if (item_used == required_steps[current_step])
         {
             //if is not the last step;
             //Next Step
             if (current_step < required_steps.Count -1) {
                 
                 current_step++;
-                print("Next Step");
+                //print("Next Step");
             }
 
             // Last step
@@ -74,7 +93,7 @@ public class Patient_Bed : MonoBehaviour
         }
         else
         {
-            Debug.Log(" Wrong item used! " + item_used);
+            //Debug.Log(" Wrong item used! " + item_used);
         }
     }
 
