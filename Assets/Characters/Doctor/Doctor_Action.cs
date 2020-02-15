@@ -12,6 +12,8 @@ public class Doctor_Action : MonoBehaviour
 
     public LineRenderer red_line;
 
+    public Player_UI player_ui;
+
     // Action variables
     public float action_offset = 1f;
 
@@ -94,6 +96,7 @@ public class Doctor_Action : MonoBehaviour
 
                 item_slot = new_tool;
                 //print(item_slot.name);
+                player_ui.Update_Inventory_Item(ITEM_TYPE.SAW);
                 return;
             }
         }

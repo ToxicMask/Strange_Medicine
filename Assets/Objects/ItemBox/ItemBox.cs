@@ -10,7 +10,12 @@ public class ItemBox : MonoBehaviour
     public Icon_Item item_icon;
 
     public Item stored_item;
+
+    //To be erased
     public int item_id = -1;
+
+    //To be used
+    public ITEM_TYPE item_enum = ITEM_TYPE.EMPTY;
 
     // Start is called before the first frame update
     void Start()
