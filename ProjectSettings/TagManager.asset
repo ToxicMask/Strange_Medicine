@@ -10,6 +10,7 @@ TagManager:
   - Icon_Display
   - Scenary
   - UI
+  - Patient_SpawnPoint
   layers:
   - Default
   - TransparentFX

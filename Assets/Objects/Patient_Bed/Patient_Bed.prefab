@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1358684677034240237}
   - component: {fileID: 1358684677034240226}
   - component: {fileID: 1358684677034240236}
-  - component: {fileID: 1358684677034240239}
   - component: {fileID: 588652415176033550}
+  - component: {fileID: 1358684677034240239}
+  - component: {fileID: 2827542073349703863}
   m_Layer: 0
   m_Name: Patient_Bed
   m_TagString: Patient
@@ -110,20 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &1358684677034240239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358684677034240227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b247f1abe7a8ae244bb0ef94ace587ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_step: 0
-  template_id: 0
 --- !u!50 &588652415176033550
 Rigidbody2D:
   serializedVersion: 4
@@ -145,6 +132,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1358684677034240239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358684677034240227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b247f1abe7a8ae244bb0ef94ace587ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_icon: {fileID: 4039842039085027632}
+  current_step: 0
+  template_id: 0
+--- !u!114 &2827542073349703863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358684677034240227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6338b84b9abea34884fd9586489014f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commentary: Seconds until Death
+  target_obj: {fileID: 1358684677034240239}
+  target_function: Patient_Died
+  targetTime: 10
+  currentTime: 0
+  active: 1
+  one_shot: 1
 --- !u!1 &6862314291702656126
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,23 +318,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4058974633660159359, guid: 12385bb1585600349b383273627e68d1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2604520630978258897, guid: d2ad80812fbea8040a518f6be1ad647b,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1412664361001256506, guid: d2ad80812fbea8040a518f6be1ad647b,
-        type: 3}
-      propertyPath: icon_id
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1412664361001256506, guid: d2ad80812fbea8040a518f6be1ad647b,
-        type: 3}
-      propertyPath: sprite_comp
-      value: 
-      objectReference: {fileID: 6536017773104195773}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2ad80812fbea8040a518f6be1ad647b, type: 3}
 --- !u!4 &8980487490460578547 stripped
@@ -322,3 +332,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3137509405194442506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4039842039085027632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1412664361001256506, guid: d2ad80812fbea8040a518f6be1ad647b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3137509405194442506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396137128eed7bb4f978a1de03b4fdb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

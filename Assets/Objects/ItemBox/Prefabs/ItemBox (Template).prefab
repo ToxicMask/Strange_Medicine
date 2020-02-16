@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 5305975159808271578, guid: 2acd8f0182b03264b88ff146a5bc787a,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7924528, g: 0.5497641, b: 0.28034887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   anim_control: {fileID: 0}
   item_display: {fileID: 0}
   item_icon: {fileID: 0}
-  item_id: -1
+  item_enum: -1
 --- !u!95 &4843223395816202616
 Animator:
   serializedVersion: 3
