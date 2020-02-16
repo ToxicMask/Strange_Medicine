@@ -46,10 +46,16 @@ public class Patient_Bed : MonoBehaviour
         life_gauge = transform.Find("Icon_Panel").GetComponent<Renderer>().material;
         timer = GetComponent<ScriptTimer>();
 
-        // Stats vor treatment
+
+        // Stats var treatment
         current_step = 0;
         required_steps = New_Template(template_id);
         Update_Icon_Panel(required_steps[current_step]);
+
+
+        // Config Components
+        Update_Timer();
+
     }
 
 
@@ -122,6 +128,7 @@ public class Patient_Bed : MonoBehaviour
                 
                 current_step++;
                 Update_Icon_Panel(required_steps[current_step]);
+                Update_Timer();
                 //print("Next Step");
             }
 
@@ -157,5 +164,51 @@ public class Patient_Bed : MonoBehaviour
     public void Update_Icon_Panel(ITEM_TYPE new_icon)
     {
         current_icon.Set_New_Icon(new_icon);
+    }
+
+    void Update_Timer()
+    {
+        float time_limit = 0;
+
+        switch (required_steps[current_step])
+        {
+            case ITEM_TYPE.SCISSOR:
+
+                time_limit = 30;
+
+                break;
+
+            case ITEM_TYPE.SAW:
+            case ITEM_TYPE.LEG:
+
+                time_limit = 20;
+
+                break;
+
+            case ITEM_TYPE.HAMMER:
+            case ITEM_TYPE.HEART:
+
+                time_limit = 15;
+
+                break;
+
+            case ITEM_TYPE.BRAIN:
+
+                time_limit = 10;
+
+                break;
+        }
+
+        // If is first surgery/ set value; Else / Add value;
+
+        if (current_step == 0)
+        {
+            timer.targetTime = time_limit;
+        }
+        else
+        {
+            timer.targetTime += time_limit;
+        }
+
     }
 }

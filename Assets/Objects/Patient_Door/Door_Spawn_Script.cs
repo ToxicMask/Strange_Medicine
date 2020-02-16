@@ -12,9 +12,13 @@ public class Door_Spawn_Script : MonoBehaviour
     // Timer script
     private ScriptTimer spawn_timer;
 
+    // Animator
+    private Animator anim_control;
+
     public List<Patient_Bed.TEMPLATE_LIST> queue_templates = new List<Patient_Bed.TEMPLATE_LIST>();
 
     public int current_template_id = 0;
+
 
 
     // Start is called before the first frame update
@@ -22,13 +26,23 @@ public class Door_Spawn_Script : MonoBehaviour
 
         // Set current template
     {
+
+        anim_control = GetComponent<Animator>();
         spawn_timer = GetComponent<ScriptTimer>();
         //Spawn_Patient_Bed(current_template);
     }
 
+    void Prepare_Bed_Spawn()
+    {
+        anim_control.SetBool("Spawning", true);
+    }
+
     void Spawn_Patient_Bed()
     {
-        if (current_template_id < queue_templates.Count -1)
+        // Spawning bool
+        anim_control.SetBool("Spawning", false);
+
+        if (current_template_id < queue_templates.Count)
         {
 
             GameObject new_instance = Instantiate(patient_prefab);
@@ -50,6 +64,13 @@ public class Door_Spawn_Script : MonoBehaviour
 
     public void Patient_Cleared()
     {
-        spawn_timer.ResetTimer();
+        if (current_template_id < queue_templates.Count)
+        {
+            spawn_timer.ResetTimer();
+        }
+        else
+        {
+            print("Done");
+        }
     }
 }

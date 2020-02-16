@@ -11,6 +11,7 @@ TagManager:
   - Scenary
   - UI
   - Patient_SpawnPoint
+  - Level_Rules
   layers:
   - Default
   - TransparentFX
