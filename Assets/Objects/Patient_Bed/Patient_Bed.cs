@@ -27,6 +27,12 @@ public class Patient_Bed : MonoBehaviour
 
     ScriptTimer timer;
 
+
+    // Score for completion (Urgent, Medium, Excelent)
+    public int[] score_range = new int[] { 50, 150, 300 };
+
+    // Steps for suceffull treatment
+    public float[] scores_steps = new float[] { .5f, .75f, 1f };
     // Current Step for the patient treatment
 
     public int current_step = 0;
@@ -62,11 +68,24 @@ public class Patient_Bed : MonoBehaviour
 
     private void Update()
     {
-        float target_time = timer.targetTime;
 
-        float current_progress = timer.currentTime /target_time;
+        float current_progress = Get_Timer_Progress();
         //Update Life Gauge
         life_gauge.SetFloat("_Progress", current_progress);
+
+        // Set Color Tint
+        if (current_progress < scores_steps[0])
+        {
+            life_gauge.SetColor("_Progress_Tint_Color", new Color(.4f, .9f, .3f, 1));
+        }
+        else if (current_progress < scores_steps[1])
+        {
+            life_gauge.SetColor("_Progress_Tint_Color", new Color(.8f, .9f, .3f, 1));
+        }
+        else
+        {
+            life_gauge.SetColor("_Progress_Tint_Color", new Color(.9f,.3f,.3f, 1));
+        }
         
     }
 
@@ -149,17 +168,38 @@ public class Patient_Bed : MonoBehaviour
     public void Patient_Died()
     {
         print("Died");
-        spawn_bed.Patient_Cleared();
+        spawn_bed.Patient_Cleared(false);
         Object.Destroy(gameObject);
     }
 
     public void Patient_Lived()
     {
+        int plus_score = 0;
+
+        float current_progress = Get_Timer_Progress();
+        if (current_progress < scores_steps[0])
+        {
+            plus_score = score_range[2];
+        }
+        else if (current_progress < scores_steps[1])
+        {
+            plus_score = score_range[1];
+        }
+        else
+        {
+            plus_score = score_range[0];
+        }
+
         print("Lived");
-        spawn_bed.Patient_Cleared();
+        spawn_bed.Patient_Cleared(true, plus_score);
         Object.Destroy(gameObject);
     }
 
+    float Get_Timer_Progress()
+    {
+        float target_time = timer.targetTime;
+        return timer.currentTime / target_time;
+    }
 
     public void Update_Icon_Panel(ITEM_TYPE new_icon)
     {

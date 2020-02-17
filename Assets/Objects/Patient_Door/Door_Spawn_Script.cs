@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door_Spawn_Script : MonoBehaviour
 {
 
+    public Rules_Gameloop level_rules;
+
     public GameObject patient_prefab;
 
     private Vector3 offset_spawpoint = new Vector3(0, -1, 0);
@@ -19,6 +21,8 @@ public class Door_Spawn_Script : MonoBehaviour
 
     public int current_template_id = 0;
 
+    public bool queue_completed = false;
+
 
 
     // Start is called before the first frame update
@@ -26,7 +30,7 @@ public class Door_Spawn_Script : MonoBehaviour
 
         // Set current template
     {
-
+        level_rules = GetComponentInParent<Rules_Gameloop>();
         anim_control = GetComponent<Animator>();
         spawn_timer = GetComponent<ScriptTimer>();
         //Spawn_Patient_Bed(current_template);
@@ -55,22 +59,33 @@ public class Door_Spawn_Script : MonoBehaviour
             script.template_id = queue_templates[current_template_id];
             current_template_id++;
         }
-
-        else
-        {
-            Object.Destroy(gameObject);
-        }
     }
 
-    public void Patient_Cleared()
+    public void Patient_Cleared(bool patient_survived, int plus_score = 0)
     {
+        //Score + Death int
+        if (patient_survived)
+        {
+            level_rules.Increase_Current_Score(plus_score);
+        }
+        else
+        {
+            level_rules.Increase_Current_Dead();
+        }
+
+
+        // Treatment queue
         if (current_template_id < queue_templates.Count)
         {
             spawn_timer.ResetTimer();
         }
         else
         {
-            print("Done");
+            queue_completed = true;
+
         }
+
+        //Check for end game
+        level_rules.Check_Endgame();
     }
 }

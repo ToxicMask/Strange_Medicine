@@ -12,6 +12,7 @@ TagManager:
   - UI
   - Patient_SpawnPoint
   - Level_Rules
+  - Score_Manager
   layers:
   - Default
   - TransparentFX
