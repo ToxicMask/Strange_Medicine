@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_ui: {fileID: 1316183060}
+  death_ui: {fileID: 204320538}
   score_manager: {fileID: 0}
   all_doors: []
   need_all_doors_cleared: 1
@@ -295,6 +296,7 @@ GameObject:
   - component: {fileID: 204320535}
   - component: {fileID: 204320537}
   - component: {fileID: 204320536}
+  - component: {fileID: 204320538}
   m_Layer: 5
   m_Name: Deaths
   m_TagString: Untagged
@@ -363,6 +365,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204320534}
   m_CullTransparentMesh: 0
+--- !u!114 &204320538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204320534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe14159c3d89a04688d219223a3503c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253796135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   final_score: 0
+  final_deaths: 0
 --- !u!1 &1098144752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,6 +4979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328572540440633756, guid: 6dcdfd7177a7bd6429a626ff7285b646,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dcdfd7177a7bd6429a626ff7285b646, type: 3}

@@ -62,24 +62,28 @@ public class Doctor_Movement : MonoBehaviour
 
     Vector2 Direction_Movement_Input()
     {
+        // dead zone
+        float dead_zone = .1f;
+
         // Create direction for player movement
         Vector2 accel_dir = Vector3.zero;
 
         // New Direction for Walk Animation
         WALK_DIR new_anim = WALK_DIR.IDLE;
 
-
+        Vector2 walk_dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        
         // Input Walk Movement
-        if (Input.GetKey(KeyCode.W))
+        if (walk_dir.y >= dead_zone)
         { accel_dir.y += 1; new_anim = WALK_DIR.UP; }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (walk_dir.y <= -dead_zone)
         { accel_dir.y += -1; new_anim = WALK_DIR.DOWN; }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (walk_dir.x <= -dead_zone)
         { accel_dir.x += -1; new_anim = WALK_DIR.LEFT; }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (walk_dir.x >= dead_zone)
         { accel_dir.x += 1; new_anim = WALK_DIR.RIGHT; }
 
         //Set new animation, Freze animation if Char is idle <TEMP>

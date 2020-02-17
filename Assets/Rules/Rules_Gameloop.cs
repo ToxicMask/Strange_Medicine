@@ -7,6 +7,8 @@ public class Rules_Gameloop : MonoBehaviour
 {
     public Score_Display_UI score_ui;
 
+    public Death_Display_UI death_ui;
+
     public Score_Manager score_manager;
 
     public List<Door_Spawn_Script> all_doors;
@@ -41,13 +43,21 @@ public class Rules_Gameloop : MonoBehaviour
         {
             all_doors.Add(child.gameObject.GetComponent<Door_Spawn_Script>());
         }
-        
+
+        //Reset Canvas values
+        //Update_Score_Display(0);
+        //Update_Death_Display(0);
     }
 
     void Update_Score_Display(int new_score)
     {
         score_ui.Update_Score_Display(new_score);
-    } 
+    }
+
+    void Update_Death_Display(int new_death)
+    {
+        death_ui.Update_Death_Display(new_death);
+    }
 
     public void Increase_Current_Score(int plus_score)
     {
@@ -60,6 +70,7 @@ public class Rules_Gameloop : MonoBehaviour
         current_score += -100;
         current_dead++;
         Update_Score_Display(current_score);
+        Update_Death_Display(current_dead);
     }
 
     bool Check_All_Doors()
@@ -160,6 +171,7 @@ public class Rules_Gameloop : MonoBehaviour
             // Set current score as final score
             //Pass to next scene
             score_manager.final_score = current_score;
+            score_manager.final_deaths = current_dead;
         }
 
         print("Quit_Game");

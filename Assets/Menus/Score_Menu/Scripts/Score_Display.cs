@@ -24,6 +24,7 @@ public class Score_Display : MonoBehaviour
             new_score = score_manager.GetComponent<Score_Manager>().final_score;
 
             // Delete Score Manager
+            //this.Invoke
             Object.Destroy(score_manager);
         }
 
